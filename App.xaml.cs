@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
+// https://www.codeproject.com/Articles/38438/Monitoring-Process-Statistics-in-C-WPF
+
 namespace MemoryPerformanceMonitoring
 {
     /// <summary>
