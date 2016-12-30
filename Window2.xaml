@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MemoryPerformanceMonitoring.Window2"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-				xmlns:c="http://research.microsoft.com/DynamicDataDisplay/1.0"
+	xmlns:c="http://research.microsoft.com/DynamicDataDisplay/1.0"
     Title="PerformanceCounter Graph" Height="363" Width="552">
 	<Grid>
 		<c:ChartPlotter Name="plotter">
