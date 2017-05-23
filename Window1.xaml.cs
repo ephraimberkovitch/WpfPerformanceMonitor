@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading;
+using System.IO;
+using Microsoft.Win32;
 
 
 namespace MemoryPerformanceMonitoring
@@ -38,6 +40,18 @@ namespace MemoryPerformanceMonitoring
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            txtFileName.Text = openFileDialog.FileName;
+            if (openFileDialog.ShowDialog() == true)
+                txtFileName.Text = openFileDialog.FileName;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            txtLog.Text = File.ReadAllText(txtFileName.Text);
+        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -171,7 +185,6 @@ namespace MemoryPerformanceMonitoring
                         str[4] = "";
                         str[5] = "";
                         str[6] = "";
-
                         str[7] = "";
                         str[8] = "";
                         str[9] = "";                      

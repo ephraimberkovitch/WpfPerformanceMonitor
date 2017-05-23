@@ -3,7 +3,20 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
     Title="Performance Statistics Monitoring" Height="299" Width="1180" Loaded="Window_Loaded">
-    <Grid>
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top" IsMainMenu="True">
+            <MenuItem Header="_File" />
+            <MenuItem Header="_Edit" />
+            <MenuItem Header="_View" />
+            <MenuItem Header="_Window" />
+            <MenuItem Header="_Help" />
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <Label>xyz</Label>
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="General">
+                <Grid>
     <ListView Name="listView" ItemsSource="{Binding StatisticsCollection}" Margin="0,0,0,43">
         <ListView.View>
             <GridView>
@@ -25,4 +38,20 @@
         <Button Height="25" HorizontalAlignment="Left" Margin="125,0,0,9" Name="button1" VerticalAlignment="Bottom" Width="110" Click="button1_Click">Memory Graph</Button>
         <Button Height="25" HorizontalAlignment="Left" Margin="257,0,0,9" Name="button2" VerticalAlignment="Bottom" Width="100" Click="button2_Click">Processor Graph</Button>
     </Grid>
+            </TabItem>
+            <TabItem Header="Security">
+                <DockPanel LastChildFill="True">
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                        <Button Click="Button_Click">Choose a file</Button>
+                        <TextBox x:Name="txtFileName" IsReadOnly="True"></TextBox>
+                        <Button Click="Button_Click_1">Show</Button>
+                    </StackPanel>
+                    <TextBox x:Name="txtLog" IsReadOnly="True" VerticalScrollBarVisibility="Auto"></TextBox>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Details">
+                <Label Content="Detail content goes here..." />
+            </TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
